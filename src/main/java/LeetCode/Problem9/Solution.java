@@ -2,18 +2,15 @@ package LeetCode.Problem9;
 
 public class Solution {
     public boolean isPalindrome(int x) {
-        String stringInput = String.valueOf(x);
-        int i = 0;
-        int j = stringInput.length()-1;
-        while(i < j){
-            if(stringInput.charAt(i)==stringInput.charAt(j)){
-                i++;
-                j--;
-            } else {
-                return false;
-            }
+        if(x < 0 || (x%10 == 0 && x !=0)){
+            return false;
         }
-        return true;
+        int revertedNumber = 0;
+        while(x > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + x % 10;
+            x/=10;
+        }
+        return x == revertedNumber || x == revertedNumber/10;
     }
 
     public static void main(String[] args) {
