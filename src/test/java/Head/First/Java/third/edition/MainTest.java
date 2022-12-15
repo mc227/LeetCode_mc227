@@ -9,4 +9,9 @@ class MainTest {
     void practice() {
         System.out.println("Just practicing making a test class");
     }
+
+    @Test
+    void deadline() {
+        System.out.println("I set a deadline to finish this book");
+    }
 }
